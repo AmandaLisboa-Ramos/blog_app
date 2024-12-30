@@ -1,23 +1,29 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
-<small>Por <%= @post.user.email %></small>
+<div class="container d-flex justify-content-center">
+  <div class="col-md-8">
+    <h1 class="mb-4"><%= @post.title %></h1>
+    <p class="mb-4"><%= @post.content %></p>
+    <small class="text-muted">Por <%= @post.user.email %></small>
 
-<h2>Comentários</h2>
-<% @post.comments.each do |comment| %>
-  <p><%= comment.content %> - <%= comment.user&.email || 'Anônimo' %> 
-    <% if comment.user == current_user || current_user.admin? %>
-      <%= link_to 'Excluir', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Tem certeza que deseja excluir este comentário?' } %>
+    <h2 class="mt-4">Comentários</h2>
+    <% @post.comments.each do |comment| %>
+      <div class="mb-3 p-3 border rounded">
+      <p><%= comment.content %> - <%= comment.user.present? ? comment.user.email : 'Anônimo' %></p>
+
+        <% if comment.user == current_user || current_user.admin? %>
+          <%= link_to 'Excluir', post_comment_path(@post, comment), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: 'Tem certeza que deseja excluir este comentário?' } %>
+        <% end %>
+      </div>
     <% end %>
-  </p>
-<% end %>
 
-<% if user_signed_in? %>
-  <%= form_with model: [@post, @comment], url: post_comments_path(@post), local: true do |form| %>
-    <div>
-      <%= form.text_area :content, rows: 4, cols: 50 %>
-    </div>
-    <div>
-      <%= form.submit 'Comentar' %>
-    </div>
-  <% end %>
-<% end %>
+    <% if user_signed_in? %>
+      <%= form_with model: [@post, @comment], url: post_comments_path(@post), local: true do |form| %>
+        <div class="mb-3">
+          <%= form.text_area :content, rows: 4, cols: 50, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.submit 'Comentar', class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

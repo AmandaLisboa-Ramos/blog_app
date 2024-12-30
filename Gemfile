@@ -6,6 +6,11 @@ gem 'bootstrap', '~> 5.0'
 gem 'sassc-rails'
 gem 'cssbundling-rails'
 gem 'sidekiq'
+group :development do
+  gem 'letter_opener_web'
+end
+
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"

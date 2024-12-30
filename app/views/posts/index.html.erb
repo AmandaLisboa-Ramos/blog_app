@@ -1,12 +1,25 @@
-<h1>Posts</h1>
-<% @posts.each do |post| %>
-  <div>
-    <h2><%= link_to post.title, post %></h2>
-    <p><%= truncate(post.comments.first.body, length: 200) if post.comments.any? %></p>
-    <small>Por <%= post.user.email %></small>
+<div class="container d-flex justify-content-center">
+  <div class="col-md-8">
+    <h1 class="mb-4">Posts</h1>
+
+    <% @posts.each do |post| %>
+      <div class="mb-4 p-3 border rounded">
+        <h2>
+          <%= link_to post.title, post, class: "text-decoration-none" %>
+        </h2>
+        <p>
+          <%= truncate(post.comments.first.body, length: 200) if post.comments.any? %>
+        </p>
+        <small class="text-muted">Por <%= post.user.email %></small>
+      </div>
+    <% end %>
+
+    <div class="d-flex justify-content-center">
+      <%= paginate @posts, class: "pagination" %>
+    </div>
+
+    <div class="text-center mt-4">
+      <%= link_to 'Novo Post', new_post_path, class: "btn btn-primary" if user_signed_in? %>
+    </div>
   </div>
-<% end %>
-
-<%= paginate @posts %>
-
-<%= link_to 'Novo Post', new_post_path if user_signed_in? %>
+</div>

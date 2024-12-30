@@ -1,0 +1,17 @@
+pt:
+  views:
+    pagination:
+      next: "Próximo"
+      prev: "Anterior"
+      last: "Último"
+      first: "Primeiro"
+  devise:
+    sessions:
+      new:
+        email: 'E-mail'
+        password: 'Senha'
+        submit: 'Entrar'
+    confirmations:
+      new:
+        email: 'E-mail'
+        submit: 'Confirmar'
