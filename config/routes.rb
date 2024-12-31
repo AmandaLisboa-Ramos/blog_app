@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   # Rotas de autenticação do Devise
   devise_for :users
-  
+  devise_scope :user do
+    get '/users/sign_out', to: 'devise/sessions#destroy'
+  end
+
   # Definindo a raiz do aplicativo
   root 'posts#index'
 

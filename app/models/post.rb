@@ -3,5 +3,6 @@ class Post < ApplicationRecord
   
   has_many :comments, dependent: :destroy
 
-  # Outras validações e lógica aqui
+  validates :title, presence: true, allow_blank: false
+  validates :content, presence: true, allow_blank: false
 end
