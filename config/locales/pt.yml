@@ -1,0 +1,12 @@
+pt:
+  activerecord:
+    models:
+      post: "Publicação"
+      comment: "Comentário"
+    attributes:
+      post:
+        title: "Título"
+        content: "Conteúdo"
+      comment:
+        content: "Conteúdo"
+        is_anonymous: "Anônimo"

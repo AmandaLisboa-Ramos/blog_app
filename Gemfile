@@ -6,6 +6,8 @@ gem 'bootstrap', '~> 5.0'
 gem 'sassc-rails'
 gem 'cssbundling-rails'
 gem 'sidekiq'
+gem 'devise-i18n'
+gem 'rails-i18n'
 group :development do
   gem 'letter_opener_web'
 end

@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user! # Garante que o usuário esteja logado
+  before_action :authenticate_user!, only: [:destroy] # Garante que o usuário esteja logado
 
   # Cria um novo comentário
   def create
@@ -9,19 +9,20 @@ class CommentsController < ApplicationController
     @comment.user = current_user # Associa o comentário ao usuário logado
 
     if @comment.save
-      redirect_to @post, notice: 'Comentário criado com sucesso!'
+      redirect_to post_path(@post), notice: "Comentário adicionado com sucesso!"
     else
-      redirect_to @post, alert: 'Erro ao criar o comentário.'
+      render "posts/show"
     end
   end
 
   # Exclui um comentário
   def destroy
-    @post = Post.find(params[:post_id]) # Encontra o post
-    @comment = @post.comments.find(params[:id]) # Encontra o comentário pelo ID
+    @comment = Comment.find(params[:id]) # Encontra o comentário pelo ID
+    @post = @comment.post
 
-    if @comment.user == current_user || current_user.admin? # Permite excluir apenas o autor ou um admin
-      @comment.destroy
+    allowed = @comment.user == current_user || current_user.admin?
+
+    if allowed && @comment.destroy
       redirect_to @post, notice: 'Comentário excluído com sucesso.'
     else
       redirect_to @post, alert: 'Você não tem permissão para excluir este comentário.'
@@ -32,6 +33,6 @@ class CommentsController < ApplicationController
 
   # Permite apenas parâmetros confiáveis para o comentário
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :is_anonymous)
   end
 end

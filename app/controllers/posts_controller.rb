@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
-    @comment = @post.comments.build # Cria um novo comentário para o post
+    @comment =  @post.comments.build # Cria um novo comentário para o post
   end
 
   # GET /posts/new
@@ -92,3 +92,7 @@ class PostsController < ApplicationController
     params.require(:comment).permit(:content)
   end
 end
+
+
+# comment_params
+# params

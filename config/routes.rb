@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   # Rotas para posts (index, show, new, create, edit, update, destroy)
   resources :posts do
     # Rotas para criar e destruir comentários dentro de posts
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
+
+  resources :comments
 
   # Rota de verificação de saúde do sistema
   get "up" => "rails/health#show", as: :rails_health_check
