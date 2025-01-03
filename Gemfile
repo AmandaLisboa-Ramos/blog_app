@@ -8,8 +8,11 @@ gem 'cssbundling-rails'
 gem 'sidekiq'
 gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'i18n-tasks'
+gem 'mailgun-ruby', '~> 1.2.6'
+
 group :development do
-  gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
 
 

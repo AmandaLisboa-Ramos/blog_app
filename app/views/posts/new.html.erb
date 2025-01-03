@@ -1,15 +1,17 @@
 <div class="container d-flex justify-content-center align-items-center">
   <div class="col-md-6">
-<% content_for :title, "New post" %>
 
-<h1>New post</h1>
+  <h2>
+    <%= t('new_title') %>
+  </h2>
 
-<%= render "form", post: @post %>
+  <%= render "form", post: @post %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to posts", posts_path %>
+  <div>
+  <%= link_to "Back to posts", posts_path, class: "btn btn-secondary" %>
 </div>
-</div>
+
+  </div>
 </div>

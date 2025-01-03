@@ -1,12 +1,27 @@
 pt:
   activerecord:
-    models:
-      post: "Publicação"
-      comment: "Comentário"
     attributes:
-      post:
-        title: "Título"
-        content: "Conteúdo"
       comment:
-        content: "Conteúdo"
-        is_anonymous: "Anônimo"
+        content: Conteúdo
+        is_anonymous: Anônimo
+      post:
+        content: Conteúdo
+        title: Título
+        new_post: Novo Post
+    models:
+      comment: Comentário
+      post: Publicação
+  errors:
+    messages:
+      not_saved: "Não foi possível salvar %{resource}: %{count} erros."
+  views:
+    pagination:
+      next: "Próximo"
+      prev: "Anterior"
+      last: "Último"
+      first: "Primeiro"
+    post:
+    title: "Título"
+    content: "Conteúdo"
+    new_title: "Novo Post"
+  welcome_message: Bem-vindo à nossa aplicação!
