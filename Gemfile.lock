@@ -79,6 +79,7 @@ GEM
       execjs (~> 2)
     base64 (0.2.0)
     bcrypt (3.1.20)
+    bcrypt_pbkdf (1.1.1)
     bcrypt_pbkdf (1.1.1-x64-mingw-ucrt)
     benchmark (0.4.0)
     bigdecimal (3.1.9)
@@ -129,6 +130,7 @@ GEM
       tzinfo
     execjs (2.10.0)
     ffi (1.17.0-x64-mingw-ucrt)
+    ffi (1.17.0-x86_64-linux-gnu)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -225,12 +227,15 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.1-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.18.1-x86_64-linux-gnu)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.1)
     parallel (1.26.3)
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
+    pg (1.5.9)
     pg (1.5.9-x64-mingw-ucrt)
     popper_js (2.11.8)
     propshaft (1.1.0)
@@ -389,6 +394,7 @@ GEM
     terminal-table (1.6.0)
     thor (1.3.2)
     thruster (0.1.9)
+    thruster (0.1.9-x86_64-linux)
     tilt (2.5.0)
     timeout (0.4.3)
     turbo-rails (2.0.11)
@@ -420,6 +426,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   activestorage
