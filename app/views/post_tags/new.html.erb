@@ -1,11 +1,15 @@
-<% content_for :title, "New post tag" %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center mb-4">New Post Tag</h1>
+      
+      <div class="card shadow p-4">
+        <%= render "form", post_tag: @post_tag %>
+      </div>
 
-<h1>New post tag</h1>
-
-<%= render "form", post_tag: @post_tag %>
-
-<br>
-
-<div>
-  <%= link_to "Back to post tags", post_tags_path %>
+      <div class="text-center mt-4">
+        <%= link_to "Back to post tags", post_tags_path, class: "btn btn-secondary btn-lg" %>
+      </div>
+    </div>
+  </div>
 </div>

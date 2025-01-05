@@ -1,22 +1,25 @@
-<%= form_with(model: post_tag) do |form| %>
+<%= form_with(model: post_tag, class: "form-horizontal") do |form| %>
   <% if post_tag.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post_tag.errors.count, "error") %> prohibited this post_tag from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h4><%= pluralize(post_tag.errors.count, "error") %> prohibited this post_tag from being saved:</h4>
       <ul>
-        <% post_tag.errors.each do |error| %>
+        <% post_tag.errors.each do |error| %> 
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.label :title, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-12">
+      <%= form.text_field :title, class: "form-control", placeholder: "Enter tag title" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <div class="col-sm-8 offset-sm-2 d-flex justify-content-center mt-3">
+  <%= form.submit "Create Tag", class: "btn btn-success" %>
+</div>
   </div>
 <% end %>

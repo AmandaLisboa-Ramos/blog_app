@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="text-center"><%= notice %></p>
 
-<%= render @post_tag %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow p-4">
+        <%= render @post_tag %>
 
-<div>
-  <%= link_to "Edit this post tag", edit_post_tag_path(@post_tag) %> |
-  <%= link_to "Back to post tags", post_tags_path %>
-
-  <%= button_to "Destroy this post tag", @post_tag, method: :delete %>
+        <div class="text-center mt-3">
+          <%= link_to "Edit this post tag", edit_post_tag_path(@post_tag), class: "btn btn-warning btn-lg mx-2 mb-2" %>
+          <%= link_to "Back to post tags", post_tags_path, class: "btn btn-secondary btn-lg mx-2 mb-2" %>
+          <%= button_to "Destroy this post tag", @post_tag, method: :delete, class: "btn btn-danger btn-lg mx-2 " %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
