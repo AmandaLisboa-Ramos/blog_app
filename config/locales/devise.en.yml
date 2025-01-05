@@ -31,8 +31,11 @@ en:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
+      changePassword: "Change password"
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
+      recoverPassword: "Forgot your password?"
+      resetInstructions: "Send reset instructions"
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
@@ -45,10 +48,25 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
+      createAccount: "Create account"
+      minimunCharacters: "Minimum characters"
+
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        title: 'Log in'
+        email: 'E-mail'
+        password: 'Password'
+        rememberMe: 'Remember'
+        submit: 'Log in'
+      resetInstructions: "Enviar instruções para redefinição"
+      shared:
+        createAccount: 'Create account'
+        forgotPassword: 'Forgot your password?'
+        confirmationInstructions: Didn't receive confirmation instructions?
+        unlockInstruction: "Didn't receive unlock instructions?"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."

@@ -34,15 +34,15 @@
                   <%= current_user.email %>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "Editar", edit_user_registration_path, class: "dropdown-item" %></li>
+                  <li><%= link_to t('views.layouts.editUser'), edit_user_registration_path, class: "dropdown-item" %></li>
                   <li>
-                    <%= link_to "Sair", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                    <%= link_to t('views.layouts.exitUser'), destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
                   </li>
                 </ul>
               </li>
             <% else %>
-              <li class="nav-item"><%= link_to 'Entrar', new_user_session_path, class: 'nav-link' %></li>
-              <li class="nav-item"><%= link_to 'Cadastrar', new_user_registration_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to t('views.layouts.loginUser'), new_user_session_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to t('views.layouts.newUser'), new_user_registration_path, class: 'nav-link' %></li>
             <% end %>
           </ul>
         </div>

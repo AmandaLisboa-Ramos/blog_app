@@ -4,16 +4,18 @@
       <!-- Card para o formulário de login -->
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title text-center">Entrar</h3>
+          <h3 class="card-title text-center">
+            <%= t('devise.sessions.new.title') %>
+          </h3>
 
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
-              <%= f.label :email, class: 'form-label' %>
+              <%= f.label t('devise.sessions.new.email'), class: 'form-label' %>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
             </div>
 
             <div class="form-group">
-              <%= f.label :password, class: 'form-label' %>
+              <%= f.label t('devise.sessions.new.password'), class: 'form-label' %>
               <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
             </div>
 
@@ -25,7 +27,7 @@
             <% end %>
 
             <div class="form-group mt-3">
-              <%= f.submit "Entrar", class: "btn btn-primary w-100" %>
+              <%= f.submit t('devise.sessions.new.submit'), class: "btn btn-success w-100" %>
             </div>
           <% end %>
 

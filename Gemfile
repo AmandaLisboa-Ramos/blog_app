@@ -6,13 +6,16 @@ gem 'bootstrap', '~> 5.0'
 gem 'sassc-rails'
 gem 'cssbundling-rails'
 gem 'sidekiq'
+gem 'redis', '~> 4.6' 
+gem 'activestorage'
 gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'i18n-tasks'
+gem 'mailgun-ruby', '~> 1.2.6'
+
 group :development do
-  gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
-
-
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"

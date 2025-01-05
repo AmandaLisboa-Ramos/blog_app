@@ -1,24 +1,12 @@
 require "active_support/core_ext/integer/time"
 
-Launchy::Application.instance_variable_set('@launchy', nil)
 
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
-
-  # Make code changes take effect immediately without server restart.
   config.enable_reloading = true
-
-  # Do not eager load code on boot.
   config.eager_load = false
-
-  # Show full error reports.
   config.consider_all_requests_local = true
-
-  # Enable server timing.
   config.server_timing = true
 
-  # Enable/disable Action Controller caching. By default Action Controller caching is disabled.
-  # Run rails dev:cache to toggle Action Controller caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
@@ -33,12 +21,13 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Usar letter_opener para abrir os e-mails no navegador
-  config.action_mailer.delivery_method = :letter_opener_web
-  config.action_mailer.letter_opener_settings = { open_address: false }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', protocol: 'http' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV['MAILGUN_API_KEY'],
+    domain: ENV['MAILGUN_DOMAIN']
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
