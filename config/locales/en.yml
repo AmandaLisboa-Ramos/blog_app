@@ -7,19 +7,37 @@ en:
       post:
         content: Content
         title: Title
+        new_post: New Post
     models:
       comment: Comment
       post: Post
   errors:
     messages:
-      not_saved: "Not saved" 
-  hello: Hello
+      not_saved: "Could not save %{resource}: %{count} errors." 
   views:
+    layouts:
+      editUser: Edit
+      exitUser: Logout
+      loginUser: Login
+      newUser: Register
     pagination:
-      first: First
-      last: Last
       next: Next
       prev: Prev
-    truncate: Truncate 
-  new_post: "New Post" 
+      last: Last
+      first: First
+    post:
+      title: Posts
+      content: Content
+      newPost: New Post
+      backPost: Back to Posts
+      commentsPostTitle: Comments
+      anonymous: Anonymous
+      comment: Comment
+      writtenBy: Written by
+      editPost: Edit
+      editPostTitle: Edit Post
+      editBack: Return
+      deletePost: Delete
+      errorComment: Error sending comment
+      
   welcome_message: Welcome to our application!

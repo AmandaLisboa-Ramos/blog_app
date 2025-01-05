@@ -4,7 +4,8 @@
       <!-- Card para o formulário de recuperação de senha -->
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title text-center">Recuperar Senha</h3>
+          <h3 class="card-title text-center">
+            <%= t('devise.passwords.recoverPassword') %> </h3>
 
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
@@ -15,7 +16,7 @@
             </div>
 
             <div class="form-group mt-3">
-              <%= f.submit "Enviar instruções para redefinição", class: "btn btn-success w-100" %>
+              <%= f.submit t('devise.passwords.resetInstructions'), class: "btn btn-success w-100" %>
             </div>
           <% end %>
 

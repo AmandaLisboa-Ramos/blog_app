@@ -15,13 +15,31 @@ pt:
     messages:
       not_saved: "Não foi possível salvar %{resource}: %{count} erros."
   views:
+    layouts:
+      editUser: Editar
+      exitUser: Sair
+      loginUser: Entrar
+      newUser: Cadastrar
     pagination:
-      next: "Próximo"
-      prev: "Anterior"
-      last: "Último"
-      first: "Primeiro"
+      next: Próximo
+      prev: Anterior
+      last: Último
+      first: Primeiro
     post:
-    title: "Título"
-    content: "Conteúdo"
-    new_title: "Novo Post"
+      title: Posts
+      content: Conteúdo
+      newPost: Novo Post
+      backPost: Voltar aos Posts
+      commentsPostTitle: Comentários
+      anonymous: Anônimo
+      comment: Comentar
+      writtenBy: Escrito por
+      editPost: Editar
+      editPostTitle: Editar Post
+      editBack: Voltar
+      deletePost: Excluir
+      errorComment: Erro ao enviar o comentário
+
+
+
   welcome_message: Bem-vindo à nossa aplicação!

@@ -2,13 +2,15 @@
 
 <div class="container d-flex justify-content-center">
   <div class="col-md-8">
-    <h1 class="mb-4">Editing Post</h1>
+    <h1 class="mb-4">
+      <%= t('views.post.editPostTitle') %>
+    </h1>
 
     <%= render "form", post: @post %>
 
     <div class="mt-4 d-flex gap-3">
-      <%= link_to "Voltar", @post, class: "btn btn-secondary me-2" %>
-      <%= button_to "Excluir", @post, method: :delete, class: 'me-2 btn btn-danger' %>
+      <%= link_to t('views.post.editBack'), @post, class: "btn btn-secondary me-2" %>
+      <%= button_to t('views.post.deletePost'), @post, method: :delete, class: 'me-2 btn btn-danger' %>
     </div>
   </div>
 </div>

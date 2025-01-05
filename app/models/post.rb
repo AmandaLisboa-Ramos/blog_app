@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user  # Cada post pertence a um usuário
+  belongs_to :user 
   
   has_many :comments, dependent: :destroy
   has_and_belongs_to_many :tags, class_name: 'PostTag'

@@ -1,6 +1,6 @@
 <div class="container d-flex justify-content-center">
   <div class="col-md-8">
-    <h1 class="mb-4"><%= t('posts.title') %></h1>
+    <h1 class="mb-4"><%= t('views.post.title') %></h1>
 
     <% @posts.each do |post| %>
       <div class="mb-4 p-3 border rounded">
@@ -19,6 +19,6 @@
     </div>
 
     <div class="text-center mt-4">
-  <%= link_to t('posts.new_post'), new_post_path, class: "btn btn-primary" if user_signed_in? %></div>
+  <%= link_to t('views.post.newPost'), new_post_path, class: "btn btn-primary" if user_signed_in? %></div>
   </div>
 </div>

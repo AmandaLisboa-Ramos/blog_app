@@ -8,9 +8,24 @@ pt:
   devise:
     sessions:
       new:
+        title: 'Entrar' 
         email: 'E-mail'
         password: 'Senha'
+        rememberMe: 'Lembrar-me'
         submit: 'Entrar'
+    passwords:
+      recoverPassword: 'Recuperar senha'
+      resetInstructions: "Enviar instruções para redefinição"
+      changePassword: 'Trocar senha'
+    registrations:
+      createAccount: 'Criar conta'
+      minimunCharacters: 'Caracteres mínimos'
+      
+    shared:
+      createAccount: 'Criar conta'
+      forgotPassword: 'Esqueceu sua senha?'
+      confirmationInstructions: 'Não recebeu as instruções de confirmação?'
+      unlockInstructions: "Não recebeu instruções de desbloqueio?"
     confirmations:
       new:
         email: 'E-mail'
