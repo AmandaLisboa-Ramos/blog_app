@@ -289,6 +289,7 @@ GEM
     rake (13.2.1)
     rdoc (6.10.0)
       psych (>= 4.0.0)
+    redis (4.8.1)
     redis-client (0.23.0)
       connection_pool
     regexp_parser (2.10.0)
@@ -421,6 +422,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  activestorage
   bootsnap
   bootstrap (~> 5.0)
   brakeman
@@ -441,6 +443,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.1)
   rails-i18n
+  redis (~> 4.6)
   rubocop-rails-omakase
   sassc-rails
   selenium-webdriver

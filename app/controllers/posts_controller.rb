@@ -9,10 +9,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params) # Cria o post associado ao usuário logado
-    
+    @post = current_user.posts.build(post_params)
+  
     respond_to do |format|
       if @post.save
+        if params[:post][:file].present?
+          @post.file.attach(params[:post][:file])
+          Rails.logger.debug "Arquivo Anexado: #{@post.file.attached?}"
+        end
+        
         format.html { redirect_to @post, notice: "Post criado com sucesso!" }
         format.json { render :show, status: :created, location: @post }
       else
@@ -21,6 +26,7 @@ class PostsController < ApplicationController
       end
     end
   end
+  
 
   # GET /posts/1 or /posts/1.json
   def show
@@ -70,6 +76,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def enqueue_upload(file)
+    file_path = Rails.root.join('tmp', file.original_filename)
+    File.open(file_path, 'wb') { |f| f.write(file.read) }
+    
+    UploadWorker.perform_later(self.id, file_path.to_s)
+  end
+
   private
 
   # Callback para encontrar o post pelo ID
@@ -84,7 +97,7 @@ class PostsController < ApplicationController
 
   # Permite apenas parâmetros confiáveis para o post
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :file)
   end
 
   # Permite apenas parâmetros confiáveis para o comentário

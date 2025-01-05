@@ -14,6 +14,15 @@
     </small>
     <p class="mb-4"><%= @post.content %></p>
 
+    <% if @post.file.attached? %>
+      <div>
+        <p><strong>Arquivo Anexado:</strong></p>
+        <%= link_to "Download do arquivo", rails_blob_path(@post.file, disposition: "attachment") %>
+      </div>
+    <% else %>
+      <p>Nenhum arquivo anexado.</p>
+    <% end %>
+
     <h2 class="mt-4">
       <%= t('views.post.commentsPostTitle') %>
     </h2>

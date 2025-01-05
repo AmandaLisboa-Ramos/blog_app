@@ -20,6 +20,11 @@
         <%= form.label :content, class: "form-label" %>
         <%= form.text_area :content, class: "form-control" %>
       </div>
+      
+      <div class="mb-3">
+        <%= form.label :file, "Upload de Arquivo (Opcional)" %>
+        <%= form.file_field :file %>
+      </div>
 
       <div class="mb-3">
         <%= form.submit class: "btn btn-primary" %>
