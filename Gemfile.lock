@@ -240,11 +240,6 @@ GEM
     pg (1.5.9)
     pg (1.5.9-x64-mingw-ucrt)
     popper_js (2.11.8)
-    propshaft (1.1.0)
-      actionpack (>= 7.0.0)
-      activesupport (>= 7.0.0)
-      rack
-      railties (>= 7.0.0)
     psych (5.2.2)
       date
       stringio
@@ -449,7 +444,6 @@ DEPENDENCIES
   kaminari
   mailgun-ruby (~> 1.2.6)
   pg (~> 1.1)
-  propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
   rails-i18n
