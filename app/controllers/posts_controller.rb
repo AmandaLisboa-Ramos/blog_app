@@ -80,7 +80,7 @@ class PostsController < ApplicationController
     file_path = Rails.root.join('tmp', file.original_filename)
     File.open(file_path, 'wb') { |f| f.write(file.read) }
     
-    UploadWorker.perform_later(self.id, file_path.to_s)
+    UploadWorkerJob.perform_later(self.id, file_path.to_s)
   end
 
   private

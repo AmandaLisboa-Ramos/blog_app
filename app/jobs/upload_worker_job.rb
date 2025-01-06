@@ -1,4 +1,4 @@
-class UploadWorker < ApplicationJob
+class UploadWorkerJob < ApplicationJob
   queue_as :uploads
 
   def perform(post_id, file_path)
