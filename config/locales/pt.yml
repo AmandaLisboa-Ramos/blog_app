@@ -29,6 +29,7 @@ pt:
       title: Posts
       content: Conteúdo
       newPost: Novo Post
+      newTag: Nova Tag
       backPost: Voltar aos Posts
       commentsPostTitle: Comentários
       anonymous: Anônimo

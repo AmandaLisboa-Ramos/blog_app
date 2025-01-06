@@ -1,4 +1,4 @@
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center pt-4 pb-4">
   <div class="col-md-8">
     <div class="d-flex justify-content-between">
       <h1 class=""><%= @post.title %></h1>
@@ -12,7 +12,16 @@
       <%= t('views.post.writtenBy') %>
       <%= @post.user.email %>
     </small>
-    <p class="mb-4"><%= @post.content %></p>
+    <p ><%= @post.content %></p>
+
+    <div class="mb-4">
+      <h4>Tag:</h4>
+      <div>
+        <% @post.tags.each do |tag| %>
+          <span class="badge p-2 bg-info text-white"><%= tag.title %></span>
+        <% end %>
+      </div>
+    </div>
 
     <% if @post.file.attached? %>
       <div>
