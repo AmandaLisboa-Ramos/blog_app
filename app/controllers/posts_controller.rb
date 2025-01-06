@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
-    @comment =  @post.comments.build # Cria um novo comentário para o post
+    @comment =  @post.comments.build 
   end
 
   # GET /posts/new
@@ -85,22 +85,22 @@ class PostsController < ApplicationController
 
   private
 
-  # Callback para encontrar o post pelo ID
+  
   def set_post
     @post = Post.find(params[:id])
   end
 
-  # Verifica se o usuário atual é o autor do post
+  
   def authorize_user!
     redirect_to posts_path, alert: "Você não tem permissão para isso." unless @post.user == current_user
   end
 
-  # Permite apenas parâmetros confiáveis para o post
+  
   def post_params
     params.require(:post).permit(:title, :content, :file, tag_ids: [])
   end
 
-  # Permite apenas parâmetros confiáveis para o comentário
+  
   def comment_params
     params.require(:comment).permit(:content)
   end
