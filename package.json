@@ -20,7 +20,8 @@
     "bootstrap-icons": "^1.11.3",
     "postcss": "^8.4.49",
     "sass": "^1.83.1",
-    "webpack": "^5.97.1"
+    "webpack": "^5.97.1",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "postcss-cli": "^11.0.0",
