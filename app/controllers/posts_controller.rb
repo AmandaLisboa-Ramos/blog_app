@@ -97,7 +97,7 @@ class PostsController < ApplicationController
 
   # Permite apenas parâmetros confiáveis para o post
   def post_params
-    params.require(:post).permit(:title, :content, :file)
+    params.require(:post).permit(:title, :content, :file, tag_ids: [])
   end
 
   # Permite apenas parâmetros confiáveis para o comentário

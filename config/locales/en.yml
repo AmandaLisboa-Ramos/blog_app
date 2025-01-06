@@ -29,6 +29,7 @@ en:
       title: Posts
       content: Content
       newPost: New Post
+      newTag: New Tag
       backPost: Back to Posts
       commentsPostTitle: Comments
       anonymous: Anonymous

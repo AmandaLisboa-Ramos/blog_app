@@ -20,6 +20,15 @@
         <%= form.label :content, class: "form-label" %>
         <%= form.text_area :content, class: "form-control" %>
       </div>
+
+
+      <div class="mb-3 d-flex flex-column">
+        <%= form.label :tag_ids, "Tags" %>
+        <%= form.select :tag_ids, PostTag.all.order(title: :asc).collect { |tag| [tag.title, tag.id] }, {}, { multiple: true, class: "form-control custom-select", size: 5 } %>
+        <small class="form-text text-muted">Escolha uma tag para o post.</small>
+      </div>
+    
+
       
       <div class="mb-3">
         <%= form.label :file, "Upload de Arquivo (Opcional)" %>
