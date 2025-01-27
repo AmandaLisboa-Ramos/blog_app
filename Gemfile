@@ -11,7 +11,7 @@ gem 'activestorage'
 gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'i18n-tasks'
-gem 'mailgun-ruby', '~> 1.2.6'
+gem 'mailgun-ruby', '~> 1.3.1'
 
 group :development do
   gem 'dotenv-rails'
