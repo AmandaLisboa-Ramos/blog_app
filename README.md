@@ -126,15 +126,10 @@ Caso você precise recuperar sua senha, envie para o endereço eletrônico [aman
 - **app/javascript**: Código JavaScript e assets do frontend.
 - **config**: Configurações da aplicação.
 
-## Acesso à Aplicação
-
-Acesse a aplicação hospedada no Heroku:
-
-[Maino Blog App](https://maino-blog-app-42b69062fd81.herokuapp.com/)
 
 ## Considerações Finais
 
-Muito obrigado por explorar o **Maino Blog App**! Fico feliz em compartilhar esse projeto com você. Se você tiver alguma dúvida, sugestão ou feedback, não hesite em me enviar uma mensagem.
+Muito obrigado por explorar o **Blog App**! Fico feliz em compartilhar esse projeto com você. Se você tiver alguma dúvida, sugestão ou feedback, não hesite em me enviar uma mensagem.
 
 - **E-mail**: amandalisboa.am@gmail.com
 
