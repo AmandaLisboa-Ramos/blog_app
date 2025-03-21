@@ -11,7 +11,6 @@ Um projeto de blog desenvolvido com Ruby on Rails, utilizando ActiveStorage para
 - [Credenciais de Acesso para Testes](#Credenciais-de-Acesso-para-Teste)
 - [Recuperação de Senha](#Recuperação-de-Senha)
 - [Estrutura do Projeto](#Estrutura-do-Projeto)
-- [Acesso à Aplicação](#Acesso-à-Aplicação)
 - [Considerações Finais](#Considerações-Finais)
 
 ## Tecnologias Utilizadas
